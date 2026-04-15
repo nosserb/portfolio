@@ -39,7 +39,7 @@ func main() {
 	})
 
 	// Configuration et démarrage du serveur
-	port := "2525"
+	port := "8080"
 	fmt.Printf("Serveur démarré sur http://localhost:%s\n", port)
 	fmt.Printf("Serveur le portfolio depuis: %s\n", portfolioPath)
 
