@@ -76,3 +76,17 @@ if (document.readyState === 'loading') {
 
   initializeApp();
 }
+
+console.clear();
+const featuresEl = document.querySelector(".features");
+const featureEls = document.querySelectorAll(".feature");
+
+if (featuresEl && featureEls.length > 0) {
+  featuresEl.addEventListener("pointermove", (ev) => {
+    featureEls.forEach((featureEl) => {
+      const rect = featureEl.getBoundingClientRect();
+      featureEl.style.setProperty("--x", ev.clientX - rect.left);
+      featureEl.style.setProperty("--y", ev.clientY - rect.top);
+    });
+  });
+}
