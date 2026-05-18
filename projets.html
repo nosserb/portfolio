@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a66c2" />
+  <meta name="description" content="Mes Projets - Portfolio de Guylann Bresson, développeur et étudiant Zone01 Rouen.">
+
+  <title>Mes Projets - BRESSON Guylann</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./public/img/favicon.png" />
+  
+  <style>
+    .projects-detailed {
+      padding: 40px 0;
+    }
+
+    .project-full {
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: start;
+      padding: 60px;
+      background: linear-gradient(135deg, rgba(10, 102, 194, 0.08) 0%, transparent 100%);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+    }
+
+    .project-full:nth-child(even) .project-content {
+      order: 1;
+    }
+
+    .project-full:nth-child(even) .project-media {
+      order: 2;
+    }
+
+    .project-content h3 {
+      font-size: 2.2rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .project-full .project-description {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .project-full ul {
+      list-style: none;
+      padding: 0;
+      margin: var(--spacing-lg) 0;
+    }
+
+    .project-full ul li {
+      color: var(--color-text-secondary);
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .project-full ul li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+
+    .project-full .project-tags {
+      margin: var(--spacing-lg) 0;
+    }
+
+    .project-link {
+      display: inline-block;
+      color: var(--color-accent);
+      text-decoration: none;
+      padding: 12px 24px;
+      border: 1px solid var(--color-accent);
+      border-radius: 999px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      margin-top: var(--spacing-md);
+    }
+
+    .project-link:hover {
+      background-color: var(--color-accent);
+      color: var(--color-dark);
+    }
+
+    .project-media {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--color-border);
+    }
+
+    .project-iframe {
+      width: 100%;
+      min-height: 500px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      background: var(--color-dark);
+    }
+
+    @media (max-width: 768px) {
+      .project-full {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+        direction: ltr;
+      }
+
+      .project-full:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .project-content h3 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <span class="logo-icon"></span>
+          <span class="logo-text">PORTFOLIO</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="aproposdemoi.html" class="nav-link">À propos de moi</a></li>
+          <li><a href="projets.html" class="nav-link">Projects</a></li>
+          <li><a href="index.html" class="nav-link">Publications</a></li>
+          <li><a href="https://github.com/nosserb" class="nav-link nav-contact">GITHUB</a></li>
+          <li><a href="https://www.linkedin.com/in/guylann-bresson-19459b365/" class="nav-link nav-contact">Linkedin</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="el" aria-hidden="true"></div>
+
+  <main>
+    <!-- Bandeau Classement CTF Gandalf Lakera (effet premium) -->
+    <section style="width:100%;padding:var(--spacing-xl) 0;background:linear-gradient(180deg, rgba(10, 102, 194, 0.12) 0%, rgba(10, 102, 194, 0.04) 100%), var(--color-dark);margin:var(--spacing-xl) 0;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-80px;right:-80px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle, rgba(10,102,194,0.15) 0%, transparent 70%);filter:blur(60px);pointer-events:none;"></div>
+      <div style="position:absolute;bottom:-60px;left:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle, rgba(10,102,194,0.12) 0%, transparent 70%);filter:blur(50px);pointer-events:none;"></div>
+      <div style="position:relative;z-index:1;padding:0 var(--spacing-lg);">
+        <div style="text-align:center;margin-bottom:var(--spacing-xl);">
+          <h2 style="font-size:2.2rem;font-weight:900;color:var(--color-text);margin:0 0 var(--spacing-md) 0;letter-spacing:0.5px;text-shadow:0 2px 8px rgba(10,102,194,0.2);">Classement CTF Gandalf Lakera</h2>
+          <p style="font-size:1.1rem;color:var(--color-text-secondary);margin:0;">CTF <strong style="color:var(--color-accent);">Agent Breaker</strong> organisé par Lakera (<a href="https://gandalf.lakera.ai/leaderboard/agent-breaker" target="_blank" style="color:var(--color-accent);text-decoration:none;font-weight:700;transition:all 0.3s;border-bottom:1px solid transparent;cursor:pointer;" onmouseover="this.style.borderBottomColor='var(--color-accent)'" onmouseout="this.style.borderBottomColor='transparent'">classement officiel</a>)</p>
+        </div>
+        <div style="display:flex;justify-content:center;width:100%;max-width:900px;margin:0 auto;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl);width:100%;max-width:700px;">
+            <div style="background:linear-gradient(135deg, rgba(10, 102, 194, 0.15) 0%, rgba(10, 102, 194, 0.05) 100%);border-radius:12px;padding:var(--spacing-xl);border:1.5px solid rgba(10, 102, 194, 0.3);display:flex;flex-direction:column;align-items:center;gap:var(--spacing-lg);transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);position:relative;backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(0,0,0,0.3);cursor:pointer;" onmouseover="this.style.borderColor='var(--color-accent)'; this.style.boxShadow='0 8px 32px rgba(10,102,194,0.25)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(10, 102, 194, 0.3)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.3)'; this.style.transform='translateY(0)'">
+              <div style="position:relative;">
+                <img src="./public/img/194.png" alt="Classement 194e mondial" style="height:90px;width:auto;border-radius:10px;border:2px solid var(--color-accent);object-fit:cover;box-shadow:0 8px 24px rgba(10,102,194,0.3);transition:all 0.3s;">
+              </div>
+              <div style="text-align:center;width:100%;">
+                <div style="font-size:2.4rem;font-weight:900;color:var(--color-accent);line-height:1;margin-bottom:var(--spacing-sm);letter-spacing:0.5px;text-shadow:0 2px 12px rgba(10,102,194,0.4);">194<sup style="font-size:0.5em;margin-left:2px;">e</sup></div>
+                <div style="font-size:1.15rem;font-weight:700;color:var(--color-text);margin-bottom:var(--spacing-sm);">Mondial</div>
+                <div style="font-size:0.95rem;color:var(--color-text-secondary);line-height:1.5;">sur plus d'1 million<br>de participants</div>
+              </div>
+            </div>
+            <div style="background:linear-gradient(135deg, rgba(10, 102, 194, 0.15) 0%, rgba(10, 102, 194, 0.05) 100%);border-radius:12px;padding:var(--spacing-xl);border:1.5px solid rgba(10, 102, 194, 0.3);display:flex;flex-direction:column;align-items:center;gap:var(--spacing-lg);transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);position:relative;backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(0,0,0,0.3);cursor:pointer;" onmouseover="this.style.borderColor='var(--color-accent)'; this.style.boxShadow='0 8px 32px rgba(10,102,194,0.25)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(10, 102, 194, 0.3)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.3)'; this.style.transform='translateY(0)'">
+              <div style="position:relative;">
+                <img src="./public/img/12.png" alt="Classement 12e étudiant mondial" style="height:90px;width:auto;border-radius:10px;border:2px solid var(--color-accent);object-fit:cover;box-shadow:0 8px 24px rgba(10,102,194,0.3);transition:all 0.3s;">
+              </div>
+              <div style="text-align:center;width:100%;">
+                <div style="font-size:2.4rem;font-weight:900;color:var(--color-accent);line-height:1;margin-bottom:var(--spacing-sm);letter-spacing:0.5px;text-shadow:0 2px 12px rgba(10,102,194,0.4);">12<sup style="font-size:0.5em;margin-left:2px;">e</sup></div>
+                <div style="font-size:1.15rem;font-weight:700;color:var(--color-text);margin-bottom:var(--spacing-sm);">Mondial Étudiant</div>
+                <div style="font-size:0.95rem;color:var(--color-text-secondary);line-height:1.5;">section étudiant<br>reconnaissance mondiale</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects-detail" class="about-section">
+      <div class="container">
+        <h1 class="section-title">Mes Projets Majeurs</h1>
+        <p class="section-subtitle">
+          Découvrez en détail mes projets , autant des projets personnels que scolaire. Chaque projet représente une opportunité d'apprentissage et de démonstration de mes compétences en développement web, IA et design d'interface.
+        </p>
+
+        <section class="projects-detailed">
+
+          <!-- Profily Project -->
+          <div class="project-full">
+            <div class="project-content">
+              <h3>Profily</h3>
+              <div class="project-tags">
+                <span class="tag">IA</span>
+                <span class="tag">Éthique</span>
+                <span class="tag">Web</span>
+                <span class="tag">Python</span>
+              </div>
+              <p class="project-description">
+                Profily est un projet d'intelligence artificielle innovant conçu pour lutter contre la discrimination à l'embauche. La plateforme anonymise les candidatures en mettant en avant les compétences et le contenu plutôt que l'identité du candidat, afin de garantir une égalité réelle des chances lors du recrutement.
+              </p>
+              <p class="project-description">
+                Le projet combine une interface web intuitive, un backend sécurisé et un moteur d'IA pour l'analyse intelligente des profils. C'est un engagement personnel envers l'équité et l'accessibilité dans le monde professionnel.
+              </p>
+              <p class="project-description"><strong>Fonctionnalités principales :</strong></p>
+              <ul>
+                <li>Anonymisation automatique des CV et lettres de motivation</li>
+                <li>Matching intelligent entre offres et candidats basé sur les compétences</li>
+                <li>Tableaux de bord distincts pour recruteurs et candidats</li>
+                <li>Respect strict de la vie privée et conformité RGPD</li>
+                <li>Analyse prédictive des compatibilités profils-offres</li>
+              </ul>
+              <a href="https://profily-b58a1.web.app/" target="_blank" class="project-link">Essayer ici</a>
+            </div>
+            <div class="project-media"> 
+              <img src="./public/img/profily.png" alt="Profily Platform" class="project-image" />
+            </div>
+          </div>
+
+          <!-- Maquette Mairie -->
+          <div class="project-full">
+            <div class="project-content">
+              <h3>Maquette Mairie Interactive</h3>
+              <div class="project-tags">
+                <span class="tag">Web</span>
+                <span class="tag">UI/UX</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <p class="project-description">
+                Réalisation d'une maquette web complète et interactive pour une mairie fictive. Ce projet démontre mes compétences en design d'interface, accessibilité web et expérience utilisateur. La maquette propose une navigation fluide, des animations modernes et une architecture adaptée aux besoins d'une collectivité territoriale.
+              </p>
+              <p class="project-description">
+                Le site offre une expérience utilisateur optimale avec un design responsive qui s'adapte à tous les appareils, des animations engageantes et une accessibilité renforcée pour tous les visiteurs.
+              </p>
+              <p class="project-description"><strong>Points forts du projet :</strong></p>
+              <ul>
+                <li>Design responsive et moderne adaptable à tous les écrans</li>
+                <li>Accessibilité web renforcée (WCAG compliant)</li>
+                <li>Pages interactives (actualités, démarches, événements, contact)</li>
+                <li>Animations fluides et transitions élégantes</li>
+                <li>Performance optimisée et SEO-friendly</li>
+              </ul>
+              <p class="project-description"><strong>Démo interactive ci-dessous :</strong></p>
+            </div>
+            <div class="project-media">
+              <iframe src="./public/mairie/index.html" class="project-iframe" title="Démo Maquette Mairie" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <!-- Nova Assistant -->
+          <div class="project-full">
+            <div class="project-content">
+              <h3>Nova Assistant</h3>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">IA</span>
+                <span class="tag">Accessibilité</span>
+                <span class="tag">Web Interface</span>
+              </div>
+              <p class="project-description">
+                Nova Assistant est un assistant vocal intelligent développé en Python, conçu pour offrir une expérience intuitive et accessible. L'application permet de contrôler son ordinateur à la voix, d'automatiser des tâches quotidiennes et d'aider les personnes en situation de handicap à accéder plus facilement à l'informatique.
+              </p>
+              <p class="project-description">
+                Le projet combine reconnaissance vocale avancée, traitement du langage naturel et interface web responsive. Nova est particulièrement pensée pour les utilisateurs en situation de handicap moteur ou visuel, les aidant à gagner en autonomie.
+              </p>
+              <p class="project-description"><strong>Fonctionnalités principales :</strong></p>
+              <ul>
+                <li>Reconnaissance vocale en temps réel</li>
+                <li>Traitement du langage naturel pour comprendre les intentions</li>
+                <li>Automation de tâches système et applications</li>
+                <li>Interface web accessible et intuitive</li>
+                <li>Support multi-langue</li>
+                <li>Apprentissage adaptatif des préférences utilisateur</li>
+              </ul>
+              <a href="https://github.com/nosserb/Nova_Assistant" target="_blank" class="project-link">Voir le code sur GitHub →</a>
+            </div>
+            <div class="project-media">
+              <img src="https://zupimages.net/up/25/31/xgq5.png" alt="Nova Assistant" class="project-image" />
+            </div>
+          </div>
+
+          <!-- Bresson Script -->
+          <div class="project-full">
+            <div class="project-content">
+              <h3>Bresson Script (BRS)</h3>
+              <div class="project-tags">
+                <span class="tag">Go</span>
+                <span class="tag">Langage</span>
+                <span class="tag">Compilateur</span>
+              </div>
+              <p class="project-description">
+                Bresson est un langage de programmation interprété conçu pour la simplicité et la lisibilité. Inspiré par une approche minimaliste, il privilégie la clarté du code et la facilité d'apprentissage tout en offrant les fonctionnalités essentielles pour le développement d'applications robustes.
+              </p>
+              <p class="project-description">
+                Ce projet met en avant mes compétences en développement système et en conception de langages. BRS est développé en Go pour garantir performance et portabilité. C'est un projet ambitieux qui combine théorie des langages et programmation pratique.
+              </p>
+              <p class="project-description"><strong>Caractéristiques principales :</strong></p>
+              <ul>
+                <li>Syntaxe minimaliste et intuitive</li>
+                <li>Interpréteur haute performance écrit en Go</li>
+                <li>Support des paradigmes fonctionnels et impératifs</li>
+                <li>Gestion automatique de la mémoire</li>
+                <li>Documentation complète et exemples</li>
+              </ul>
+              <a href="https://github.com/nosserb/BResson-Script" target="_blank" class="project-link">Voir le code sur GitHub →</a>
+            </div>
+            <div class="project-media">
+              <img src="./public/img/github.png" alt="Bresson Script" class="project-image" />
+            </div>
+          </div>
+
+          <!-- NEUROPULSE -->
+          <div class="project-full">
+            <div class="project-content">
+              <h3>NEUROPULSE - Article Scientifique</h3>
+              <div class="project-tags">
+                <span class="tag">Recherche</span>
+                <span class="tag">IA</span>
+                <span class="tag">Publication</span>
+              </div>
+              <p class="project-description">
+                NEUROPULSE est une architecture d'intelligence artificielle innovante, distribuée et asynchrone, inspirée de la résonance atomique. Cette approche théorique génère des comportements émergents complexes à partir d'interactions locales simples, ouvrant de nouvelles perspectives en IA.
+              </p>
+              <p class="project-description">
+                Ce projet a abouti à la publication d'un article scientifique, démontrant l'engagement académique et la capacité à conceptualiser des solutions novatrices. NEUROPULSE représente une étape importante dans ma compréhension des systèmes complexes et de l'intelligence artificielle décentralisée.
+              </p>
+              <p class="project-description"><strong>Contributions scientifiques :</strong></p>
+              <ul>
+                <li>Modèle d'IA distribuée et décentralisée</li>
+                <li>Émergence de comportements complexes</li>
+                <li>Publication scientifique reconnue</li>
+                <li>Applications potentielles en systèmes multi-agents</li>
+                <li>Inspiration biologique et physique</li>
+              </ul>
+            </div>
+            <div class="project-media">
+              <img src="./public/img/neuropulse.png" alt="NEUROPULSE" class="project-image" />
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

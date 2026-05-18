@@ -164,7 +164,7 @@ button {
    HEADER & NAVIGATION
    ============================================================ */
 .header {
-  background-color: transparent;
+  background-color: rgba(20, 20, 30, 0.95); /* fond sombre, légèrement opaque */
   padding: var(--spacing-lg) 0;
   position: sticky;
   top: 0;
