@@ -13,19 +13,33 @@
   
   <style>
     .projects-detailed {
-      padding: 40px 0;
+      padding: var(--spacing-xl) 0;
+    }
+
+    @media (min-width: 768px) {
+      .projects-detailed {
+        padding: 40px 0;
+      }
     }
 
     .project-full {
-      margin-bottom: 80px;
+      margin-bottom: var(--spacing-xl);
       display: grid;
       grid-template-columns: 1fr;
-      gap: 60px;
+      gap: var(--spacing-lg);
       align-items: start;
-      padding: 60px;
+      padding: var(--spacing-lg);
       background: linear-gradient(135deg, rgba(10, 102, 194, 0.08) 0%, transparent 100%);
       border: 1px solid var(--color-border);
       border-radius: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .project-full {
+        margin-bottom: 80px;
+        gap: 60px;
+        padding: 60px;
+      }
     }
 
     .project-full:nth-child(even) .project-content {
@@ -37,7 +51,7 @@
     }
 
     .project-content h3 {
-      font-size: 2.2rem;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       margin-bottom: var(--spacing-md);
     }
 
@@ -45,6 +59,7 @@
       color: var(--color-text-secondary);
       line-height: 1.8;
       margin-bottom: var(--spacing-lg);
+      font-size: 0.9rem;
     }
 
     .project-full ul {
@@ -58,6 +73,7 @@
       padding: 8px 0;
       padding-left: 24px;
       position: relative;
+      font-size: 0.9rem;
     }
 
     .project-full ul li:before {
@@ -76,12 +92,19 @@
       display: inline-block;
       color: var(--color-accent);
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border: 1px solid var(--color-accent);
       border-radius: 999px;
       transition: all 0.3s ease;
       font-weight: 600;
       margin-top: var(--spacing-md);
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .project-link {
+        padding: 12px 24px;
+      }
     }
 
     .project-link:hover {
@@ -104,27 +127,15 @@
 
     .project-iframe {
       width: 100%;
-      min-height: 500px;
+      min-height: 300px;
       border: 1px solid var(--color-border);
       border-radius: 12px;
       background: var(--color-dark);
     }
 
-    @media (max-width: 768px) {
-      .project-full {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 40px;
-        direction: ltr;
-      }
-
-      .project-full:nth-child(even) {
-        grid-template-columns: 1fr;
-        direction: ltr;
-      }
-
-      .project-content h3 {
-        font-size: 1.8rem;
+    @media (min-width: 768px) {
+      .project-iframe {
+        min-height: 500px;
       }
     }
   </style>
@@ -137,7 +148,12 @@
           <span class="logo-icon"></span>
           <span class="logo-text">PORTFOLIO</span>
         </div>
-        <ul class="nav-menu">
+        <button class="hamburger-menu" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html" class="nav-link">Accueil</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
           <li><a href="aproposdemoi.html" class="nav-link">À propos de moi</a></li>
@@ -355,5 +371,6 @@
     </section>
   </main>
 
+  <script src="script.js" defer></script>
 </body>
 </html>

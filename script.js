@@ -1,6 +1,7 @@
 
 function initializeApp() {
   setupEventListeners();
+  setupHamburgerMenu();
   animateProgressBars();
   animateScrollElements();
 }
@@ -67,6 +68,38 @@ function animateScrollElements() {
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
+  });
+}
+
+function setupHamburgerMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  
+  if (!hamburger || !navMenu) return;
+  
+  // Toggle menu on hamburger click
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+  });
+  
+  // Close menu when a link is clicked
+  navMenu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
